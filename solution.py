@@ -6,10 +6,10 @@ def sudoku_solve(board):
         continue
         
       for digit in range(1, 10):
-        if is_in_row(digit, board, row):
+        if digit in board[row]:
           continue
           
-        if is_in_col(digit, board, col):
+        if digit in (vector[col] for vector in board):
           continue
           
         if is_in_block(digit, board, row, col):
@@ -23,17 +23,6 @@ def sudoku_solve(board):
       return False
   
   return True
-
-
-def is_in_row(ch, board, row):
-  return ch in board[row]
-
-def is_in_col(ch, board, col):
-  for row in range(0, 9):
-    if board[row][col] == ch:
-      return True
-    
-  return False
 
 def is_in_block(ch, board, row, col):
   row_start = 0 if row < 3 else 3 if row < 6 else 6
