@@ -6,3 +6,5 @@ Example (more examples can be found here):
 altA typical Sudoku board setter
 
 altThe same board with solution numbers marked in red
+
+Cool
